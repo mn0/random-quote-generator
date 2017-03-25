@@ -7,28 +7,32 @@ var quotes = [
     quote: "the quote",
     source: "source",
     citation: "citation",
-    year: 1900
+    year: 1900,
+    tags: "funny"
   },
 
   {
     quote: "the quote",
     source: "source",
     citation: "citation",
-    year: 1900
+    year: 1900,
+    tags: "political"
   },
 
   {
     quote: "the quote",
     source: "source",
     citation: "citation",
-    year: 1900
+    year: 1900,
+    tags: "historical"
   },
 
   {
     quote: "the quote",
     source: "source",
     citation: "citation",
-    year: 1900
+    year: 1900,
+    tags: "historical"
   }
 
 ];
