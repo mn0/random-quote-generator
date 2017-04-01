@@ -2,7 +2,7 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 
 
-// document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 // array populated by quotes objects:
 
@@ -42,5 +42,26 @@ var quotes = [
 
 function getRandomQuote(){
   var indexNumber = Math.floor(Math.random() * (quotes.length));
-  console.log(quotes[indexNumber]);
+  return (quotes[indexNumber]);
+};
+
+
+// calls getRandomQuote, stores quote as variable, inserts .
+
+function printQuote(getRandomQuote) {
+
+  var selectedQuote = getRandomQuote;
+
+  document.getElementsByClassName("quote")[0].innerHTML = selectedQuote.quote;
+
+  document.getElementsByClassName("source")[0].innerHTML = selectedQuote.source;
+
+  // if (!quote.citation){
+  //   document.getElementsByClassName("citation")[0].textContent = quote.citation;
+  // };
+
+  // if (!quote.year) {
+  //   document.getElementsByClassName("year")[0].textContent = quote.year;
+  // };
+
 };
