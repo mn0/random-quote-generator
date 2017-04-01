@@ -7,7 +7,6 @@ var quotes = [
     quote: "We have so much time and so little to do. Strike that, reverse it.",
     source: "Roald Dahl",
     citation: "Charlie and the Chocolate Factory",
-    year: "",
     tags: "funny"
   },
 
@@ -22,8 +21,6 @@ var quotes = [
   {
     quote: "I've had a perfectly wonderful evening. But this wasn't it.",
     source: "Groucho Marx",
-    citation: "",
-    year: "",
     tags: "funny"
   },
 
@@ -31,7 +28,6 @@ var quotes = [
     quote: "If you wish success in life, make perseverance your bosom friend, experience your wise counselor, caution your elder brother and hope your guardian genius.",
     source: "Joseph Addison",
     citation: "citation",
-    year: "",
     tags: "success"
   }
 
