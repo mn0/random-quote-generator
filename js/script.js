@@ -4,35 +4,35 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 
 var quotes = [
   {
-    quote: "the quote",
-    source: "source",
-    citation: "citation",
-    year: 1900,
+    quote: "We have so much time and so little to do. Strike that, reverse it.",
+    source: "Roald Dahl",
+    citation: "Charlie and the Chocolate Factory",
+    year: "",
     tags: "funny"
   },
 
   {
-    quote: "the quote",
-    source: "source",
-    citation: "citation",
-    year: 1900,
-    tags: "political"
+    quote: "As a scientist, I am not sure anymore that life can be reduced to a class struggle, to dialectical materialism, or any set of formulas. Life is spontaneous and it is unpredictable, it is magical. I think that we have struggled so hard with the tangible that we have forgotten the intangible.",
+    source: "Diane Frolov and Andrew Schneider",
+    citation: "Northern Exposure, Zarya",
+    year: 1994,
+    tags: "philosophy"
   },
 
   {
-    quote: "the quote",
-    source: "source",
-    citation: "citation",
-    year: 1900,
-    tags: "historical"
+    quote: "I've had a perfectly wonderful evening. But this wasn't it.",
+    source: "Groucho Marx",
+    citation: "",
+    year: "",
+    tags: "funny"
   },
 
   {
-    quote: "the quote",
-    source: "source",
+    quote: "If you wish success in life, make perseverance your bosom friend, experience your wise counselor, caution your elder brother and hope your guardian genius.",
+    source: "Joseph Addison",
     citation: "citation",
-    year: 1900,
-    tags: "historical"
+    year: "",
+    tags: "success"
   }
 
 ];
