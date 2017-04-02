@@ -31,7 +31,6 @@ var quotes = [
   {
     quote: "If you wish success in life, make perseverance your bosom friend, experience your wise counselor, caution your elder brother and hope your guardian genius.",
     source: "Joseph Addison",
-    citation: "citation",
     tags: "success"
   }
 
@@ -46,22 +45,46 @@ function getRandomQuote(){
 };
 
 
-// calls getRandomQuote, stores quote as variable, inserts .
+// calls getRandomQuote, stores quote as variable, inserts.
 
-function printQuote(getRandomQuote) {
+function printQuote() {
 
-  var selectedQuote = getRandomQuote;
+  var selectedQuote = getRandomQuote();
 
-  document.getElementsByClassName("quote")[0].innerHTML = selectedQuote.quote;
+  //assembles the quote into its HTML form
 
-  document.getElementsByClassName("source")[0].innerHTML = selectedQuote.source;
+  function fullQuoteHTML() {
 
-  // if (!quote.citation){
-  //   document.getElementsByClassName("citation")[0].textContent = quote.citation;
-  // };
+    if (selectedQuote.hasOwnProperty("citation")){
+      var citation = selectedQuote.citation;
+    } else {
+      var citation = false;
+    };
 
-  // if (!quote.year) {
-  //   document.getElementsByClassName("year")[0].textContent = quote.year;
-  // };
+    if (selectedQuote.hasOwnProperty("year")){
+      var year = selectedQuote.year;
+    } else {
+      var year = false;
+    }
+
+    var quoteAndSource = '<p class="quote">' + selectedQuote.quote + '</p>' + '<p class="source">'
+      + selectedQuote.source;
+
+  };
+
+  //inserts the returned string from the fullQuoteHTML function into the DOM
+
+  document.getElementById("quote-box").innerHTML = fullQuoteHTML();
 
 };
+
+
+<p class="quote">You can do anything but not everything</p>
+<p class="source">David Allen<span class="citation">Making It All Work</span><span class="year">2009</span></p>
+
+
+
+// have the page load a quote object from the array on refresh, and not the one embedded in the HTML
+// interval timer for changing quotes which is reset if load quote button is pressed
+// color changes with quote
+// way to mark quotes in the array as displayed or not
