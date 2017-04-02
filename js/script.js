@@ -44,14 +44,20 @@ function getRandomQuote(){
 };
 
 
-// calls getRandomQuote, stores quote as variable, inserts.
+
+
+
+
+
+
+
+// calls getRandomQuote(), stores quote as variable, inserts.
 
 function printQuote() {
 
   var selectedQuote = getRandomQuote();
 
-  //assembles the quote into its HTML form
-
+  //assembles the quote parts into their HTML forms
 
   if (selectedQuote.hasOwnProperty("citation")){
     var citation = '<span class="citation">' + selectedQuote.citation + '</span>';
@@ -68,29 +74,46 @@ function printQuote() {
   var quoteAndSource = '<p class="quote">' + selectedQuote.quote + '</p>' + '<p class="source">'
     + selectedQuote.source;
 
+  // assembles the full quote
+
   var fullQuoteHTML;
 
   if (citation == false && year == false){
-    fullQuoteHTML = quoteAndSource + '</p>';
+    fullQuoteHTML = quoteAndSource;
   } else if (citation != false && year == false){
-    fullQuoteHTML = quoteAndSource + citation + '</p>';
+    fullQuoteHTML = quoteAndSource + citation;
   } else if (citation == false && year != false){
-    fullQuoteHTML = quoteAndSource + year + '</p>';
+    fullQuoteHTML = quoteAndSource + year;
   } else {
-    fullQuoteHTML = quoteAndSource + citation + year + '</p>';
+    fullQuoteHTML = quoteAndSource + citation + year;
   };
 
-  //inserts the returned string from the fullQuoteHTML function into the DOM
+  fullQuoteHTML = fullQuoteHTML  + '</p>';
+
+  //inserts fullQuoteHTML into the DOM
 
   document.getElementById("quote-box").innerHTML = fullQuoteHTML;
 
 };
 
+
+
+
 // have the page load a quote object from the array on refresh, and not the one embedded in the HTML
 
 printQuote();
 
+
+
+
+
 // interval timer for changing quotes which is reset if load quote button is pressed
+
+
+
+
+
+// color changes with quote
 
 function changeColor() {
   var backgroundColor = document.getElementByTagName("body background-color")
@@ -98,10 +121,6 @@ function changeColor() {
 }
 
 changeColor();
-
-
-// color changes with quote
-
 
 
 
