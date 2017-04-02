@@ -15,10 +15,10 @@ var quotes = [
   },
 
   {
-    quote: "As a scientist, I am not sure anymore that life can be reduced to a class struggle, to dialectical materialism, or any set of formulas. Life is spontaneous and it is unpredictable, it is magical. I think that we have struggled so hard with the tangible that we have forgotten the intangible.",
-    source: "Diane Frolov and Andrew Schneider",
-    citation: "Northern Exposure, Zarya",
-    year: 1994,
+    quote: "Humility is no substitute for a good personality.",
+    source: "Fran Leibowitz",
+    citation: "Metropolitan Life",
+    year: 1978,
     tags: "philosophy"
   },
 
@@ -36,7 +36,6 @@ var quotes = [
 
 ];
 
-
 // creates a random index number:
 
 function getRandomQuote(){
@@ -53,38 +52,60 @@ function printQuote() {
 
   //assembles the quote into its HTML form
 
-  function fullQuoteHTML() {
 
-    if (selectedQuote.hasOwnProperty("citation")){
-      var citation = selectedQuote.citation;
-    } else {
-      var citation = false;
-    };
+  if (selectedQuote.hasOwnProperty("citation")){
+    var citation = '<span class="citation">' + selectedQuote.citation + '</span>';
+  } else {
+    var citation = false;
+  };
 
-    if (selectedQuote.hasOwnProperty("year")){
-      var year = selectedQuote.year;
-    } else {
-      var year = false;
-    }
+  if (selectedQuote.hasOwnProperty("year")){
+    var year = '<span class="year">' + selectedQuote.year + '</span>';
+  } else {
+    var year = false;
+  };
 
-    var quoteAndSource = '<p class="quote">' + selectedQuote.quote + '</p>' + '<p class="source">'
-      + selectedQuote.source;
+  var quoteAndSource = '<p class="quote">' + selectedQuote.quote + '</p>' + '<p class="source">'
+    + selectedQuote.source;
 
+  var fullQuoteHTML;
+
+  if (citation == false && year == false){
+    fullQuoteHTML = quoteAndSource + '</p>';
+  } else if (citation != false && year == false){
+    fullQuoteHTML = quoteAndSource + citation + '</p>';
+  } else if (citation == false && year != false){
+    fullQuoteHTML = quoteAndSource + year + '</p>';
+  } else {
+    fullQuoteHTML = quoteAndSource + citation + year + '</p>';
   };
 
   //inserts the returned string from the fullQuoteHTML function into the DOM
 
-  document.getElementById("quote-box").innerHTML = fullQuoteHTML();
+  document.getElementById("quote-box").innerHTML = fullQuoteHTML;
 
 };
 
-
-<p class="quote">You can do anything but not everything</p>
-<p class="source">David Allen<span class="citation">Making It All Work</span><span class="year">2009</span></p>
-
-
-
 // have the page load a quote object from the array on refresh, and not the one embedded in the HTML
+
+printQuote();
+
 // interval timer for changing quotes which is reset if load quote button is pressed
+
+function changeColor() {
+  var backgroundColor = document.getElementByTagName("body background-color")
+  console.log(backgroundColor);
+}
+
+changeColor();
+
+
 // color changes with quote
+
+
+
+
 // way to mark quotes in the array as displayed or not
+
+
+
