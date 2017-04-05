@@ -11,7 +11,7 @@ var quotes = [
     quote: "We have so much time and so little to do. Strike that, reverse it.",
     source: "Roald Dahl",
     citation: "Charlie and the Chocolate Factory",
-    tags: "funny"
+    tags: ["funny"]
   },
 
   {
@@ -19,19 +19,19 @@ var quotes = [
     source: "Fran Leibowitz",
     citation: "Metropolitan Life",
     year: 1978,
-    tags: "philosophy"
+    tags: ["philosophy"]
   },
 
   {
     quote: "I've had a perfectly wonderful evening. But this wasn't it.",
     source: "Groucho Marx",
-    tags: "funny"
+    tags: ["funny"]
   },
 
   {
     quote: "If you wish success in life, make perseverance your bosom friend, experience your wise counselor, caution your elder brother and hope your guardian genius.",
     source: "Joseph Addison",
-    tags: "success"
+    tags: ["success"]
   }
 
 ];
@@ -42,13 +42,6 @@ function getRandomQuote(){
   var indexNumber = Math.floor(Math.random() * (quotes.length));
   return (quotes[indexNumber]);
 };
-
-
-
-
-
-
-
 
 
 // calls getRandomQuote(), stores quote as variable, inserts.
@@ -94,6 +87,10 @@ function printQuote() {
 
   document.getElementById("quote-box").innerHTML = fullQuoteHTML;
 
+
+  //calls changeColor();
+
+  changeColor();
 };
 
 
@@ -116,13 +113,26 @@ printQuote();
 // color changes with quote
 
 function changeColor() {
-  var backgroundColor = document.getElementByTagName("body background-color")
-  console.log(backgroundColor);
-}
+
+  var r = getrgbValue();
+  var g = getrgbValue();
+  var b = getrgbValue();
+
+  var newColor = "rgb(" + r + ", " + g + ", " + b + ");";
+
+  // NEEDS FIXING
+  //document.body.style.backgroundColor = newColor;
+
+};
+
+
+// returns a number between 0 and 255 for the changeColor() function.
+
+function getrgbValue() {
+  return Math.floor(Math.random() * 256 );
+};
 
 changeColor();
-
-
 
 // way to mark quotes in the array as displayed or not
 
