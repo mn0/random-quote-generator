@@ -118,7 +118,9 @@ function changeColor() {
   var g = getrgbValue();
   var b = getrgbValue();
 
-  var newColor = "rgb(" + r + ", " + g + ", " + b + ");";
+  var newColor = "rgb(" + r + "," + g + "," + b + ")";
+
+  document.body.style.backgroundColor = newColor;
 
   // NEEDS FIXING
   //document.body.style.backgroundColor = newColor;
