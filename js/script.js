@@ -11,7 +11,8 @@ var quotes = [
     quote: "We have so much time and so little to do. Strike that, reverse it.",
     source: "Roald Dahl",
     citation: "Charlie and the Chocolate Factory",
-    tags: ["funny"]
+    tags: ["funny"],
+    displayed: false
   },
 
   {
@@ -19,19 +20,22 @@ var quotes = [
     source: "Fran Leibowitz",
     citation: "Metropolitan Life",
     year: 1978,
-    tags: ["philosophy"]
+    tags: ["philosophy"],
+    displayed: false;
   },
 
   {
     quote: "I've had a perfectly wonderful evening. But this wasn't it.",
     source: "Groucho Marx",
-    tags: ["funny"]
+    tags: ["funny"],
+    displayed: false
   },
 
   {
     quote: "If you wish success in life, make perseverance your bosom friend, experience your wise counselor, caution your elder brother and hope your guardian genius.",
     source: "Joseph Addison",
-    tags: ["success"]
+    tags: ["success"],
+    displayed: false;
   }
 
 ];
@@ -96,15 +100,24 @@ function printQuote() {
 
 
 
-// have the page load a quote object from the array on refresh, and not the one embedded in the HTML
-
-printQuote();
-
 
 
 
 
 // interval timer for changing quotes which is reset if load quote button is pressed
+
+
+function quoteTimer(){
+  counts to 5 and then prints quote, resets when printQuote is called
+};
+
+
+
+
+
+
+
+
 
 
 
@@ -114,6 +127,10 @@ printQuote();
 
 function changeColor() {
 
+  function getrgbValue() {
+    return Math.floor(Math.random() * 256 );
+  };
+
   var r = getrgbValue();
   var g = getrgbValue();
   var b = getrgbValue();
@@ -122,21 +139,47 @@ function changeColor() {
 
   document.body.style.backgroundColor = newColor;
 
-  // NEEDS FIXING
-  //document.body.style.backgroundColor = newColor;
-
 };
-
 
 // returns a number between 0 and 255 for the changeColor() function.
 
-function getrgbValue() {
-  return Math.floor(Math.random() * 256 );
-};
 
-changeColor();
+
+
+
+
+
+
+
+
+
+
+
+
 
 // way to mark quotes in the array as displayed or not
 
+function allDisplayed(){
+  if quotes each displayed true,
+    refreshquotestatus to false,
+  printQuote();
 
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// have the page load a quote object from the array on refresh, and not the one embedded in the HTML
+
+printQuote();
 
