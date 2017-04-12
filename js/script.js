@@ -11,8 +11,7 @@ var quotes = [
     quote: "We have so much time and so little to do. Strike that, reverse it.",
     source: "Roald Dahl",
     citation: "Charlie and the Chocolate Factory",
-    tags: ["funny"],
-    displayed: false
+    tags: ["funny"]
   },
 
   {
@@ -20,25 +19,25 @@ var quotes = [
     source: "Fran Leibowitz",
     citation: "Metropolitan Life",
     year: 1978,
-    tags: ["philosophy"],
-    displayed: false;
+    tags: ["philosophy"]
   },
 
   {
     quote: "I've had a perfectly wonderful evening. But this wasn't it.",
     source: "Groucho Marx",
-    tags: ["funny"],
-    displayed: false
+    tags: ["funny"]
   },
 
   {
     quote: "If you wish success in life, make perseverance your bosom friend, experience your wise counselor, caution your elder brother and hope your guardian genius.",
     source: "Joseph Addison",
-    tags: ["success"],
-    displayed: false;
+    tags: ["success"]
   }
 
 ];
+
+var displayedQuotes = [];
+var timer;
 
 // creates a random index number:
 
@@ -95,6 +94,9 @@ function printQuote() {
   //calls changeColor();
 
   changeColor();
+
+  // prints the printed quote to the console.
+  console.log(selectedQuote);
 };
 
 
@@ -127,6 +129,8 @@ function quoteTimer(){
 
 function changeColor() {
 
+// returns a number between 0 and 255 for the RGB values
+
   function getrgbValue() {
     return Math.floor(Math.random() * 256 );
   };
@@ -140,44 +144,6 @@ function changeColor() {
   document.body.style.backgroundColor = newColor;
 
 };
-
-// returns a number between 0 and 255 for the changeColor() function.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// way to mark quotes in the array as displayed or not
-
-function allDisplayed(){
-  if quotes each displayed true,
-    refreshquotestatus to false,
-  printQuote();
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // have the page load a quote object from the array on refresh, and not the one embedded in the HTML
 
