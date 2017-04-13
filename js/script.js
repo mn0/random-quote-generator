@@ -58,7 +58,6 @@ function getRandomQuote(){
 
   return selectedQuote;
 
-
 };
 
 // calls getRandomQuote(), stores quote as variable, inserts.
@@ -111,6 +110,7 @@ function printQuote() {
 
   // prints the printed quote to the console.
   console.log(selectedQuote);
+  resetRefreshQuote();
 };
 
 // refresh quote
@@ -119,7 +119,6 @@ function refreshQuote() {
   timer = setInterval(printQuote, 5000);
 }
 
-
 // resets the timer for when the printQuote function is called
 
 function resetRefreshQuote() {
@@ -127,13 +126,12 @@ function resetRefreshQuote() {
   refreshQuote();
 }
 
-// a function to reset the quotes array once all have been displayed.
+// a function to reset the quotes array once all have been displayed
 
 function resetQuotes() {
   quotes = displayedQuotes;
   displayedQuotes = [];
 };
-
 
 // a function to remove the quote once it's been printed and add it to the array of displayed quotess
 
@@ -141,7 +139,6 @@ function removeQuote(selectedQuote) {
   quotes.splice(quotes.indexOf(selectedQuote), 1);
   displayedQuotes.push(selectedQuote);
 };
-
 
 // color changes with quote
 
@@ -166,4 +163,6 @@ function changeColor() {
 // have the page load a quote object from the array on refresh, and not the one embedded in the HTML
 
 printQuote();
+
+
 
