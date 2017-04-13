@@ -61,7 +61,6 @@ function getRandomQuote(){
 
 };
 
-
 // calls getRandomQuote(), stores quote as variable, inserts.
 
 function printQuote() {
@@ -114,7 +113,19 @@ function printQuote() {
   console.log(selectedQuote);
 };
 
+// refresh quote
 
+function refreshQuote() {
+  timer = setInterval(printQuote, 5000);
+}
+
+
+// resets the timer for when the printQuote function is called
+
+function resetRefreshQuote() {
+  clearInterval(timer);
+  refreshQuote();
+}
 
 // a function to reset the quotes array once all have been displayed.
 
@@ -130,27 +141,6 @@ function removeQuote(selectedQuote) {
   quotes.splice(quotes.indexOf(selectedQuote), 1);
   displayedQuotes.push(selectedQuote);
 };
-
-
-
-
-// interval timer for changing quotes which is reset if load quote button is pressed
-
-
-function quoteTimer(){
-  // counts to 5 and then prints quote, resets when printQuote is called
-};
-
-
-
-
-
-
-
-
-
-
-
 
 
 // color changes with quote
