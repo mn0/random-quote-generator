@@ -110,7 +110,7 @@ function printQuote() {
 
 
 function quoteTimer(){
-  counts to 5 and then prints quote, resets when printQuote is called
+  // counts to 5 and then prints quote, resets when printQuote is called
 };
 
 
