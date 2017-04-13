@@ -42,8 +42,23 @@ var timer;
 // creates a random index number:
 
 function getRandomQuote(){
+
   var indexNumber = Math.floor(Math.random() * (quotes.length));
-  return (quotes[indexNumber]);
+  var selectedQuote = quotes[indexNumber];
+
+  // removing the new quote
+
+  removeQuote(selectedQuote);
+
+  //  refreshes the quotes array if all already displayed
+
+  if(quotes.length === 0) {
+    resetQuotes();
+  };
+
+  return selectedQuote;
+
+
 };
 
 
@@ -101,7 +116,20 @@ function printQuote() {
 
 
 
+// a function to reset the quotes array once all have been displayed.
 
+function resetQuotes() {
+  quotes = displayedQuotes;
+  displayedQuotes = [];
+};
+
+
+// a function to remove the quote once it's been printed and add it to the array of displayed quotess
+
+function removeQuote(selectedQuote) {
+  quotes.splice(quotes.indexOf(selectedQuote), 1);
+  displayedQuotes.push(selectedQuote);
+};
 
 
 
