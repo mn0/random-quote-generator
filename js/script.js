@@ -32,9 +32,22 @@ var quotes = [
     quote: "If you wish success in life, make perseverance your bosom friend, experience your wise counselor, caution your elder brother and hope your guardian genius.",
     source: "Joseph Addison",
     tags: ["success"]
+  },
+
+  {
+    quote: "I have nothing to say, and I am saying it, and that is poetry.",
+    source: "John Cage",
+    tags: ["miscellaneous"]
+  },
+
+  {
+    quote: "By all means marry; if you get a good wife, you'll be happy. If you get a bad one, you'll become a philosopher.",
+    source: "Socrates",
+    tags: ["funny", "marriage"]
   }
 
 ];
+
 
 var displayedQuotes = [];
 var timer;
