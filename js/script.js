@@ -57,6 +57,7 @@ var timer;
 function getRandomQuote(){
 
   var indexNumber = Math.floor(Math.random() * (quotes.length));
+
   var selectedQuote = quotes[indexNumber];
 
   // removing the new quote
